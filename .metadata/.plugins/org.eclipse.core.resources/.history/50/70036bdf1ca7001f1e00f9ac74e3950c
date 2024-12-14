@@ -1,0 +1,36 @@
+package com.cpcd.microservices.app.estudiantes.controller;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.cpcd.microservices.app.estudiantes.models.entity.Estudiante;
+import com.cpcd.microservices.app.estudiantes.services.ServicioEstudiante;
+
+@RestController
+public class ControladorEstudiante {
+
+	@Autowired
+	private ServicioEstudiante servicioestudiante;
+	
+	@GetMapping
+	public ResponseEntity<?> devolverEstudiantes(){
+		return ResponseEntity.ok().body(servicioestudiante.findAll());
+	}
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<?> devolverEstudiante(@PathVariable Long id){
+		Optional<Estudiante> est = servicioestudiante.findById(id);
+		
+		if (est.isEmpty()) {
+			return ResponseEntity.notFound().build();
+		}else {
+			return ResponseEntity.ok(est.get());
+		}
+	}
+
+}

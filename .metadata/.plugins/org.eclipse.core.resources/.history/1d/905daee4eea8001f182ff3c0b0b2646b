@@ -1,0 +1,11 @@
+spring.application.name=scgateway
+server.port= 8090
+
+eureka.client.service-url.defaultZone = htt://localhost:8761/eureka
+
+spring.cloud.gateway.mvc.routes[0].id= microservicoestudiante
+spring.cloud.gateway.mvc.routes[0].uri = lb://microservicoestudiante
+spring.cloud.gateway.mvc.routes[0].predicates = Path = /api/estudiantes/**
+spring.cloud.gateway.mvc.routes[0].filters = StripPrefix = 2
+
+spring.cloud.loadbalancer.ribbon.enable = false

@@ -1,0 +1,7 @@
+package com.cpcd.microservices.app.estudiantes.models.repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface RepositorioEstudiante extends CrudRepository<T, ID> {
+
+}

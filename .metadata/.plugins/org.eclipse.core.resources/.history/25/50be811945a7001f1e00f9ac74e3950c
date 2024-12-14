@@ -1,0 +1,9 @@
+spring.application.name= microservicoestudiante
+spring.port = ${PORT:0}
+eureka.instance.instance-id= ${spring.application.name}:${randonvalue}
+spring.datasource.url=jdbc:mysql://localhost:3306/dbestudiantes
+spring.datasource.username=spring
+spring.datasource.password=pEfR%/uv3et6nV[
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.database-platform=org.hibernate.dialect.MariaDB104Dialect
+spring.jpa.generate-ddl=true

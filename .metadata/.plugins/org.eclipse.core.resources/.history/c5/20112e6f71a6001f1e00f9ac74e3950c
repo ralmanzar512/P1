@@ -1,0 +1,5 @@
+package com.cpcd.microservices.app.estudiantes.models.entity;
+
+public class Estudiante {
+
+}

@@ -1,0 +1,5 @@
+package com.cpcd.microservices.app.estudiantes.controller;
+
+public class ControladorEstudiante {
+
+}
